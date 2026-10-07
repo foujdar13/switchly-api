@@ -1,0 +1,5 @@
+### Create Organization
+POST http://localhost:8080/api/organizations?name=Test Organization
+
+### Get All Organizations
+GET http://localhost:8080/api/organizations
