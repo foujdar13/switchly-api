@@ -10,14 +10,15 @@ public class Flag {
     private final String key;
     private final String name;
     private boolean enabled;
-
+    private String description;
     public Flag(
             UUID id,
             UUID organizationId,
             UUID projectId,
             String key,
             String name,
-            boolean enabled
+            boolean enabled,
+            String description
     ) {
         this.id = id;
         this.organizationId = organizationId;
@@ -25,6 +26,7 @@ public class Flag {
         this.key = key;
         this.name = name;
         this.enabled = enabled;
+        this.description = description;
     }
 
     public UUID getId() {
@@ -53,5 +55,8 @@ public class Flag {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+    public String getDescription() {
+        return description;
     }
 }

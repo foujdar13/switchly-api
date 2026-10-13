@@ -1,5 +1,5 @@
 package live.switchly.api.exception;
-
+import live.switchly.api.exception.FlagNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -68,4 +68,19 @@ public class GlobalExceptionHandler {
                 )
         );
     }
+
+    @ExceptionHandler(FlagNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleFlagNotFound(
+            FlagNotFoundException ex) {
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                Map.of(
+                        "timestamp", Instant.now().toString(),
+                        "status", 404,
+                        "error", "Flag Not Found",
+                        "message", ex.getMessage()
+                )
+        );
+    }
+
 }

@@ -1,0 +1,15 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###### Create flag with description
+#POST http://localhost:8080/api/v1/flags?organizationId=YOUR_ORG_ID&projectId=YOUR_PROJECT_ID&key=homework_test&name=Homework%20Test&enabled=true&description=Testing%20description
+
+### Create flag with description
+POST http://localhost:8080/api/v1/flags?organizationId=YOUR_ORG_ID&projectId=YOUR_PROJECT_ID&key=homework_test&name=Homework%20Test&enabled=true&description=Testing%20description
+
+### Get organizations
+GET http://localhost:8080/api/organizations
+
+### Get projects
+GET http://localhost:8080/api/projects

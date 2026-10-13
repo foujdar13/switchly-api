@@ -37,4 +37,8 @@ public class InMemoryFlagRepository implements FlagRepository {
                                 && flag.getKey().equals(key)
                 );
     }
+    @Override
+    public boolean deleteById(UUID id) {
+        return flags.remove(id) != null;
+    }
 }
